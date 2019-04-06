@@ -28,3 +28,9 @@ new PromiEvent((resolve, reject, event) => {
 //> Finally!!!
 
 ```
+
+## Tests
+```sh
+npm run test
+npm run test:coverage
+```
