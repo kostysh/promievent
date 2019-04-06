@@ -21,8 +21,8 @@ new PromiEvent((resolve, reject, event) => {
 
 // Output:
 //> { a: 1 }
-//> { a: 1 }
-//> { a: 1 }
+//> { a: 2 }
+//> { a: 3 }
 //> { o: 1 }
 //> Done
 //> Finally!!!
