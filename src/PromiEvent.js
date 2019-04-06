@@ -16,8 +16,14 @@ export default class PromiEvent {
     constructor(executor) {
         this.eventEmitter = new EventEmitter();
         this.promise = new Promise((resolve, reject) => {
-            this.resolve = resolve;
-            this.reject = reject;
+            this.resolve = (...args) => {
+                this.eventEmitter.removeAllListeners();
+                resolve.apply(this, args);
+            };
+            this.reject = (...args) => {
+                this.eventEmitter.removeAllListeners();
+                reject.apply(this, args);
+            };
         });
 
         const proxy = new Proxy(this, {
